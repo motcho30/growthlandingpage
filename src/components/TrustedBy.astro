@@ -1,0 +1,52 @@
+---
+const logos = [
+  { name: 'Company 1' },
+  { name: 'Company 2' },
+  { name: 'Company 3' },
+  { name: 'Company 4' },
+  { name: 'Company 5' },
+];
+---
+
+<div class="trusted-by">
+  <p>Trusted by over 30,000 apps</p>
+  <div class="logo-container">
+    {logos.map((logo) => (
+      <div class="logo-placeholder">{logo.name}</div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .trusted-by {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+  }
+
+  .trusted-by p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .logo-placeholder {
+    width: 100px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+</style>

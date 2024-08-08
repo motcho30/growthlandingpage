@@ -1,0 +1,112 @@
+---
+// src/components/Header.astro
+---
+
+<header class="header">
+  <div class="container">
+    <a href="/" class="logo">
+      GrowthPulse
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#resources">Resources</a>
+    </nav>
+    <div class="cta-buttons">
+      <a href="/login" class="btn-login">Log In</a>
+      <a href="/signup" class="btn-signup">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .logo img {
+    height: 2rem;
+    margin-right: 0.5rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+  }
+
+  nav a:hover {
+    opacity: 0.8;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn-login, .btn-signup {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-login {
+    color: white;
+    border: 1px solid white;
+  }
+
+  .btn-signup {
+    background-color: white;
+    color: #6366f1;
+  }
+
+  .btn-login:hover, .btn-signup:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script>
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.style.background = 'rgba(255, 255, 255, 0.2)';
+    } else {
+      header.style.background = 'rgba(255, 255, 255, 0.1)';
+    }
+  });
+</script>

@@ -1,0 +1,174 @@
+---
+// src/components/Hero.astro
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Build and scale your <span class="highlight">subscription business</span></h1>
+    <p>The world's top apps use GrowthPulse to power in-app subscriptions, manage customers, and boost revenue across iOS, Android, and the web.</p>
+    <div class="cta">
+      <input type="email" placeholder="Your email address" />
+      <button class="btn-primary">Start for free</button>
+    </div>
+    <a href="#demo" class="btn-secondary">Watch demo</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-number">10k+</span>
+      <span class="stat-label">Active users</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">$1B+</span>
+      <span class="stat-label">Revenue processed</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">99.9%</span>
+      <span class="stat-label">Uptime</span>
+    </div>
+  </div>
+  <div class="background-animation"></div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  }
+
+  .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #6366f1, #8b5cf6, #d946ef);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: 0;
+  }
+
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    text-align: center;
+    color: white;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .highlight {
+    background: linear-gradient(to right, #22d3ee, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .cta {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  input[type="email"] {
+    width: 300px;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  input[type="email"]:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-primary {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #22c55e;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #16a34a;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .stat-label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+</style>

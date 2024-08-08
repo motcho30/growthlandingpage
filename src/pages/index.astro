@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import TrustedBy from '../components/TrustedBy.astro';
+import Features from '../components/Features.astro';
+import Solutions from '../components/Solutions.astro';
+import Testimonial from '../components/Testimonial.astro';
+---
+
+<Layout title="GrowthPulse - Build and Scale Your Subscription Business">
+  <Header />
+  <main>
+ <Hero />
+    <Solutions />
+	<Features />
+    <Testimonial />
+  </main>
+  <footer>
+    <p>&copy; 2023 GrowthPulse. All rights reserved.</p>
+  </footer>
+</Layout>
+
+<style>
+  main {
+    overflow-x: hidden;
+	width: 100%;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+  }
+</style>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Intersection Observer for fade-in animations
+  const fadeElems = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeElems.forEach(elem => observer.observe(elem));
+</script>

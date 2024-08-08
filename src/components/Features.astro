@@ -1,0 +1,139 @@
+---
+// src/components/Features.astro
+---
+
+<section class="features">
+  <h2>Tools for growth</h2>
+  <p class="subtitle">A suite of turn-key solutions for monetizing and growing your app.</p>
+
+  <div class="feature-grid">
+    <div class="feature-item">
+      <div class="feature-content">
+        <h3>Easily customize & ship paywalls</h3>
+        <p>Customize one of our native paywall templates or bring your own. Remotely configure changes to any element.</p>
+        <a href="#" class="learn-more">Learn about native paywalls &gt;</a>
+      </div>
+      <div class="feature-image">
+        <img src="/images/paywall.png" alt="Paywall Editor" class="image-main" />
+      </div>
+    </div>
+
+    <div class="feature-item reverse">
+      <div class="feature-content">
+        <h3>Optimize for every audience</h3>
+        <p>Tailor how you monetize your app. Target your paywalls, pricing, and packaging by audience segments and in-app placement.</p>
+        <a href="#" class="learn-more">Learn about segmentation with Targeting &gt;</a>
+      </div>
+      <div class="feature-image">
+        <img src="/images/audience1.png" alt="Audience Optimization" class="image-main" />
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-content">
+        <h3>Maximize revenue with A/B testing</h3>
+        <p>Learn what drives growth with remotely configurable A/B tests and full-funnel analytics.</p>
+        <a href="#" class="learn-more">Learn about no-code experimentation &gt;</a>
+      </div>
+      <div class="feature-image">
+        <img src="/images/ab.png" alt="A/B Testing" class="image-main" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #4a5568;
+    margin-bottom: 4rem;
+  }
+
+  .feature-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .feature-item.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .feature-content {
+    flex: 1;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 1rem;
+  }
+
+  .feature-content p {
+    color: #4a5568;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .learn-more {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .feature-image {
+    flex: 1;
+    position: relative;
+  }
+
+  .image-main {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-secondary {
+    position: absolute;
+    width: 60%;
+    bottom: -20%;
+    left: -20%;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .feature-item, .feature-item.reverse {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .feature-image {
+      order: -1;
+    }
+
+    .image-secondary {
+      position: static;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+</style>

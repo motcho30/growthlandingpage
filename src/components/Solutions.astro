@@ -1,0 +1,85 @@
+---
+import SolutionsReact from './SolutionsReact';
+---
+
+<SolutionsReact client:visible />
+
+<style is:global>
+  .solutions {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f6f0fd 0%, #f1f5f9 100%);
+    text-align: center;
+  }
+  .solutions h2 {
+    font-size: 2.5rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .solutions .subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .solution-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  .icon-wrapper {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .icon {
+    font-size: 2rem;
+    color: white;
+  }
+  .solution-card h3 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+  .solution-card p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  .learn-more {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  .learn-more:hover {
+    color: #2563eb;
+  }
+</style>
